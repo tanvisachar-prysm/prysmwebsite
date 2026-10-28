@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="96 -2 26 26" width="32" height="32">
+  <defs>
+    <linearGradient x1="-19.221%" y1="19.028%" x2="66.009%" y2="86.996%" id="headerLogo_svg__a">
+      <stop stop-color="#15A0FF" offset="0%"></stop>
+      <stop stop-color="#1EA6EF" offset="11%"></stop>
+      <stop stop-color="#37B4C7" offset="31%"></stop>
+      <stop stop-color="#5FCC85" offset="60%"></stop>
+      <stop stop-color="#96ED2B" offset="94%"></stop>
+      <stop stop-color="#9FF21C" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="-78.601%" y1="-80.563%" x2="94.189%" y2="95.557%" id="headerLogo_svg__b">
+      <stop stop-color="#15A0FF" offset="0%"></stop>
+      <stop stop-color="#1EA6EF" offset="11%"></stop>
+      <stop stop-color="#37B4C7" offset="31%"></stop>
+      <stop stop-color="#5FCC85" offset="60%"></stop>
+      <stop stop-color="#96ED2B" offset="94%"></stop>
+      <stop stop-color="#9FF21C" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="-209.748%" y1="-180.342%" x2="95.847%" y2="90.72%" id="headerLogo_svg__c">
+      <stop stop-color="#15A0FF" offset="0%"></stop>
+      <stop stop-color="#1EA6EF" offset="11%"></stop>
+      <stop stop-color="#37B4C7" offset="31%"></stop>
+      <stop stop-color="#5FCC85" offset="60%"></stop>
+      <stop stop-color="#96ED2B" offset="94%"></stop>
+      <stop stop-color="#9FF21C" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g fill-rule="nonzero" fill="none">
+    <path d="M119.538 11.197L98.352.024a.18.18 0 00-.208.028.181.181 0 00-.04.207l5.677 11.437c.024.05.024.11 0 .16L98.067 23.07a.178.178 0 00.031.214.176.176 0 00.214.025l2.454-1.385s0-.034.017-.048l5.1-9.976.057-.112-3.4-6.824a.181.181 0 01.037-.21.18.18 0 01.212-.029l12.792 6.421 1.08.56-1.471 2.866 4.365-2.457a.526.526 0 00-.017-.918z" fill="url(#headerLogo_svg__a)"></path>
+    <path d="M110.142 11.733h-.85c-.519 0-.994.29-1.23.754l-4.019 7.847 2.743-1.549a.19.19 0 00.072-.075L110.3 12a.181.181 0 00-.16-.267z" fill="url(#headerLogo_svg__b)"></path>
+    <path d="M112.181 12.494l-2.481 4.824 2.519-1.42a.19.19 0 00.071-.074l2.098-4.094h-.983c-.518.004-.99.3-1.224.764z" fill="url(#headerLogo_svg__c)"></path>
+  </g>
+</svg>

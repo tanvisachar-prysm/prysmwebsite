@@ -1,0 +1,203 @@
+@import "tailwindcss";
+
+/*
+  PRYSM design system on Tailwind v4.
+  Colour tokens are CSS variables so they can be re-scoped (OS dark mode, .dark-section, light tiles);
+  Tailwind colour utilities (bg-surface, text-fg-2, border-line …) read those variables.
+*/
+
+/* Breakpoints mirror the design's max-width cut-offs: use max-*: for "at or below", plain prefix for "above". */
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-sm: 521px;    /* max-sm:   ≤ 520px */
+  --breakpoint-nav: 641px;   /* max-nav:  ≤ 640px  header switches to the mobile nav */
+  --breakpoint-md: 701px;    /* max-md:   ≤ 700px */
+  --breakpoint-proof: 721px; /* max-proof:≤ 720px */
+  --breakpoint-tab: 761px;   /* max-tab:  ≤ 760px */
+  --breakpoint-lg: 881px;    /* max-lg:   ≤ 880px  two-column layouts stack */
+  --breakpoint-fa: 901px;    /* max-fa:   ≤ 900px  capabilities accordion goes single-column */
+  --breakpoint-xl: 981px;    /* max-xl:   ≤ 980px */
+
+  --font-sans: "Aptos", "Segoe UI Variable Text", "Segoe UI", "Inter", system-ui, -apple-system, sans-serif;
+  --font-display: "Aptos Display", "Aptos", "Segoe UI Variable Display", "Segoe UI", "Inter", system-ui, sans-serif;
+
+  --animate-fade-up: fade-up .4s ease;
+  @keyframes fade-up {
+    from { opacity: .25; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-surface: var(--surface);
+  --color-fg: var(--fg);
+  --color-fg-2: var(--fg-2);
+  --color-fg-3: var(--fg-3);
+  --color-line: var(--line);
+  --color-panel-line: var(--panel-line);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-gold-rule: var(--gold-rule);
+}
+
+@custom-variant on-dark (&:where(.dark-section *));
+@custom-variant can-hover (@media (hover: hover));
+
+@layer base {
+  :root {
+    --bg: #ffffff; --bg-alt: #f6f5f3; --surface: #ffffff; --stone: #f3f1ec;
+    --fg: #1b1a1f; --fg-2: #56525f; --fg-3: #7a7684; --line: #e3e1e7; --panel-line: rgba(20,16,40,.09);
+    --accent: #4a2a99; --accent-hover: #391f7d; --accent-fg: #ffffff; --accent-soft: #ebe5f8;
+    --gold-rule: #e2ad35; --bloom-a: #ddd2f7;
+    --pri-bg: #f1edf9; --pri-1a: #efe9fc; --pri-1b: #ddd1f7; --pri-2a: #fdeef3; --pri-2b: #f9d7e3; --pri-3a: #fef6e6; --pri-3b: #fbe6bf;
+    --tex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cdefs%3E%3Cpattern id='d' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='10' cy='10' r='1' fill='%233b3448' fill-opacity='.16'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='240' height='240' fill='url%28%23d%29'/%3E%3Ccircle cx='70' cy='50' r='2.2' fill='%234a2a99' fill-opacity='.32'/%3E%3Ccircle cx='190' cy='130' r='2.2' fill='%23d84b7f' fill-opacity='.32'/%3E%3Ccircle cx='110' cy='210' r='2.2' fill='%234a2a99' fill-opacity='.32'/%3E%3C/svg%3E");
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #131216; --bg-alt: #1b1a1f; --surface: #1d1c22; --stone: #1a1920;
+      --fg: #f2f0f5; --fg-2: #b5b1bf; --fg-3: #8f8a9b; --line: #2e2c35; --panel-line: rgba(255,255,255,.1);
+      --accent: #b59ff6; --accent-hover: #cbbaff; --accent-fg: #1a1030; --accent-soft: #2a2340;
+      --gold-rule: #f0c262; --bloom-a: #2e2550;
+      --pri-bg: #1a1724; --pri-1a: #251e3a; --pri-1b: #2f2550; --pri-2a: #2b1d27; --pri-2b: #3a2133; --pri-3a: #2a2419; --pri-3b: #3a2e17;
+      --tex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cdefs%3E%3Cpattern id='d' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23ffffff' fill-opacity='.07'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='240' height='240' fill='url%28%23d%29'/%3E%3Ccircle cx='70' cy='50' r='2.2' fill='%23b59ff6' fill-opacity='.35'/%3E%3Ccircle cx='190' cy='130' r='2.2' fill='%23f07aa5' fill-opacity='.35'/%3E%3Ccircle cx='110' cy='210' r='2.2' fill='%23b59ff6' fill-opacity='.35'/%3E%3C/svg%3E");
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #131216; --bg-alt: #1b1a1f; --surface: #1d1c22; --stone: #1a1920;
+    --fg: #f2f0f5; --fg-2: #b5b1bf; --fg-3: #8f8a9b; --line: #2e2c35; --panel-line: rgba(255,255,255,.1);
+    --accent: #b59ff6; --accent-hover: #cbbaff; --accent-fg: #1a1030; --accent-soft: #2a2340;
+    --gold-rule: #f0c262; --bloom-a: #2e2550;
+    --pri-bg: #1a1724; --pri-1a: #251e3a; --pri-1b: #2f2550; --pri-2a: #2b1d27; --pri-2b: #3a2133; --pri-3a: #2a2419; --pri-3b: #3a2e17;
+    --tex: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cdefs%3E%3Cpattern id='d' width='20' height='20' patternUnits='userSpaceOnUse'%3E%3Ccircle cx='10' cy='10' r='1' fill='%23ffffff' fill-opacity='.07'/%3E%3C/pattern%3E%3C/defs%3E%3Crect width='240' height='240' fill='url%28%23d%29'/%3E%3Ccircle cx='70' cy='50' r='2.2' fill='%23b59ff6' fill-opacity='.35'/%3E%3Ccircle cx='190' cy='130' r='2.2' fill='%23f07aa5' fill-opacity='.35'/%3E%3Ccircle cx='110' cy='210' r='2.2' fill='%23b59ff6' fill-opacity='.35'/%3E%3C/svg%3E");
+    color-scheme: dark;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--fg);
+    font-size: 17px; line-height: 1.6; font-weight: 350;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; letter-spacing: -.015em; }
+  h1 { font-size: clamp(2.3rem, 5.2vw, 3.9rem); line-height: 1.06; font-weight: 600; }
+  h2 { font-size: clamp(1.8rem, 3.5vw, 2.7rem); line-height: 1.12; font-weight: 600; }
+  h3 { font-size: 1.35rem; line-height: 1.25; font-weight: 700; }
+  h4 { font-size: 1.05rem; line-height: 1.3; font-weight: 700; }
+  a { color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+  input::placeholder, textarea::placeholder { color: #757575; }
+
+  section { padding-block: clamp(56px, 8vw, 104px); scroll-margin-top: 60px; }
+  /* Short gold rule under every section heading */
+  section h2::after {
+    content: ""; display: block; width: 40px; height: 3px; margin-top: 20px;
+    background: var(--gold-rule); border-radius: 1px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    html { scroll-behavior: auto; }
+  }
+}
+
+/* Centered page column */
+@utility wrap {
+  max-width: 1240px;
+  margin-inline: auto;
+  padding-inline: clamp(16px, 4vw, 40px);
+}
+
+/* Dark band: re-scopes the colour tokens for everything inside it */
+@utility dark-section {
+  --bg: #0d0c14; --bg-alt: #17151f; --surface: rgba(60,55,96,.42);
+  --fg: #ffffff; --fg-2: #e6e2f0; --fg-3: #cdc7dc; --line: rgba(255,255,255,.2); --panel-line: rgba(255,255,255,.18);
+  --accent: #cbbcff; --accent-hover: #cfc0ff; --accent-fg: #160d33; --accent-soft: rgba(160,130,255,.16);
+  color-scheme: dark;
+  color: var(--fg);
+  font-weight: 400;
+  background: radial-gradient(ellipse 75% 60% at 50% -8%, rgba(104,64,220,.26), transparent 70%), #0d0c14;
+}
+
+/* Light card inside a dark or tinted band */
+@utility light-tile {
+  --bg: #ffffff; --surface: #ffffff; --bg-alt: #f6f5f3;
+  --fg: #1b1a1f; --fg-2: #56525f; --fg-3: #7a7684; --line: #e3e1e7; --panel-line: rgba(20,16,40,.09);
+  --accent: #4a2a99; --accent-fg: #fff; --accent-soft: #ebe5f8;
+  color-scheme: light;
+  color: var(--fg);
+}
+
+/* Warm stone band with the dotted data texture */
+@utility bg-band {
+  background: var(--tex), var(--stone);
+  background-size: 240px 240px, auto;
+}
+
+/* Lavender wash behind page openings */
+@utility hero-bloom {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(48px, 7vw, 96px);
+  & > * { position: relative; }
+  &::before {
+    content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(180deg, var(--bloom-a) 0%, color-mix(in srgb, var(--bloom-a) 35%, transparent) 55%, transparent 100%);
+  }
+}
+
+/* Photo backgrounds (base colour shows while the photo loads) */
+@utility bg-strands-dark {
+  background: linear-gradient(rgba(13,12,20,.82), rgba(13,12,20,.9)), url(/img/bg-purple-strands.jpg) center/cover #0d0c14 !important;
+}
+@utility bg-strands-band {
+  background: linear-gradient(90deg, rgba(20,10,50,.92), rgba(40,20,90,.6)), url(/img/bg-purple-strands.jpg) center/cover #1c0f45 !important;
+}
+@utility bg-strands-cta {
+  background: linear-gradient(90deg, rgba(20,10,50,.88), rgba(40,20,90,.4)), url(/img/bg-purple-strands.jpg) center/cover #1c0f45 !important;
+}
+@utility bg-team-photo {
+  background: linear-gradient(rgba(13,12,20,.78), rgba(13,12,20,.86)), url(/img/playbook-team.jpg) center/cover #0d0c14 !important;
+}
+@utility bg-conf-photo {
+  background: linear-gradient(180deg, rgba(13,12,20,.2), rgba(13,12,20,.9) 58%), url(/img/ex-conf.jpg) center 30%/cover #0d0c14 !important;
+}
+
+/* The one glowing highlight panel per page: spot-glow (border, glow, white text) + spot-fill (violet gradient) */
+@utility spot-glow {
+  position: relative;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,.35) !important;
+  box-shadow: 0 0 0 1px rgba(185,165,255,.45), 0 0 70px rgba(124,84,255,.55), 0 0 140px rgba(124,84,255,.25) !important;
+  & * { color: #fff; }
+}
+@utility spot-fill {
+  background: linear-gradient(160deg, #6b42e6 0%, #4a2a99 100%) !important;
+}
+
+/* Click-to-enlarge figure with the corner expand badge */
+@utility zoomable {
+  position: relative;
+  cursor: zoom-in;
+  &::after {
+    content: ""; position: absolute; right: 10px; bottom: 10px; width: 30px; height: 30px; border-radius: 50%;
+    background: rgba(255,255,255,.95) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a2a99' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center/16px no-repeat;
+    box-shadow: 0 2px 8px rgba(30,15,80,.2);
+  }
+}
+
+/* Harvey ball: --f is the filled share (0–100%), --d the fill-in delay */
+@property --f { syntax: "<percentage>"; inherits: false; initial-value: 0%; }
+@utility harvey-ball {
+  --on: #9fbcff; --off: rgba(255,255,255,.22);
+  display: inline-block; flex: none; vertical-align: middle;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: conic-gradient(var(--on) 0 var(--f), var(--off) 0);
+  transition: --f .55s cubic-bezier(.2,.7,.2,1) var(--d, 0ms);
+  @media (max-width: 700px) { width: 17px; height: 17px; }
+  @media (prefers-reduced-motion: reduce) { transition: none; }
+}
