@@ -101,7 +101,7 @@ export const CompareTable = () => {
 
   return (
     <Section variant="dark" id="compare">
-      <Wrap>
+      {/* <Wrap>
         <SectionHead title="How PRYSM compares" lede="Qualitative capability breadth by solution category. These are provisional category-level assessments, not verified competitor product scores." />
         <div className="flex flex-wrap gap-4.5 -mt-3 mb-6 text-[.9rem] text-fg-2">
           {[4, 3, 2, 1, 0].map((l) => <span className="inline-flex items-center gap-2" key={l}><HarveyBall level={l} />{LEVELS[l]}</span>)}
@@ -153,7 +153,7 @@ export const CompareTable = () => {
             ))}
           </table>
         </div>
-      </Wrap>
+      </Wrap> */}
     </Section>
   )
 }
