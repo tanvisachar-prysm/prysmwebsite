@@ -1,11 +1,11 @@
 // Single source of truth for site navigation (header, mobile nav, footer).
 export const PAGES = {
   home: { to: '/', label: 'Home' },
-  prysm: { to: '/prysm', label: 'About PRYSM', short: 'PRYSM', blurb: 'The application' },
+  prysm: { to: '/about', label: 'About PRYSM', short: 'PRYSM', blurb: 'The application' },
   playbook: { to: '/playbook', label: 'Frontline Playbook', short: 'Playbook', blurb: 'Strategy, training, and tools' },
   results: { to: '/results', label: 'Results' },
   security: { to: '/security', label: 'Security' },
-  demo: { to: '/demo', label: 'Request a Demo' },
+  demo: { to: '/contact', label: 'Request a Demo' },
 }
 
 export const SOLUTIONS = [PAGES.prysm, PAGES.playbook]

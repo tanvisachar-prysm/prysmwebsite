@@ -20,26 +20,29 @@ function AppContent() {
 
   return (
     <LightboxProvider>
-      <Header />
-      <main>
-        <Routes>
-          <Route path={PAGES.home.to} element={<Home />} />
-          <Route path={PAGES.prysm.to} element={<Prysm />} />
-          <Route path={PAGES.playbook.to} element={<Playbook />} />
-          <Route path={PAGES.results.to} element={<Results />} />
-          <Route path={PAGES.security.to} element={<Security />} />
-          <Route path={PAGES.demo.to} element={<Demo />} />
-          <Route path="/thank-you" element={<ThankYou />} />
-          {/* Old URLs */}
-          <Route path="/platform" element={<Navigate to={PAGES.prysm.to} replace />} />
-          <Route path="/about" element={<Navigate to={PAGES.prysm.to} replace />} />
-          <Route path="/solutions" element={<Navigate to={PAGES.playbook.to} replace />} />
-          <Route path="/contact" element={<Navigate to={PAGES.demo.to} replace />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </main>
-      <FloatingDemoButton />
-      <Footer />
+      {/* Full-height column so the footer sits at the bottom on short pages */}
+      <div className="flex min-h-svh flex-col">
+        <Header />
+        <main className="flex-1">
+          <Routes>
+            <Route path={PAGES.home.to} element={<Home />} />
+            <Route path={PAGES.prysm.to} element={<Prysm />} />
+            <Route path={PAGES.playbook.to} element={<Playbook />} />
+            <Route path={PAGES.results.to} element={<Results />} />
+            <Route path={PAGES.security.to} element={<Security />} />
+            <Route path={PAGES.demo.to} element={<Demo />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            {/* Old URLs */}
+            <Route path="/prysm" element={<Navigate to={PAGES.prysm.to} replace />} />
+            <Route path="/platform" element={<Navigate to={PAGES.prysm.to} replace />} />
+            <Route path="/demo" element={<Navigate to={PAGES.demo.to} replace />} />
+            <Route path="/solutions" element={<Navigate to={PAGES.playbook.to} replace />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </main>
+        <FloatingDemoButton />
+        <Footer />
+      </div>
     </LightboxProvider>
   )
 }

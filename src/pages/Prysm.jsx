@@ -7,6 +7,7 @@ import { Eyebrow, Lede, Prose, Pull, Section, SectionHead, Split, Stack, Wrap } 
 import { shotClass } from '../utils/styles'
 import { cx } from '../utils/cx'
 import { useSEO } from '../utils/useSEO'
+import { PAGES } from '../utils/navigation'
 
 export const Prysm = () => {
   useSEO('About PRYSM', 'PRYSM is an enterprise application purpose-built for healthcare philanthropy, connecting clinical intelligence, prospect development, and clinician engagement.')
@@ -116,7 +117,7 @@ export const Prysm = () => {
         <Wrap>
           <Split top>
             <Lede strong>PRYSM implementation includes integration, configuration, training, and go-live support.</Lede>
-            <Lede>PRYSM combines the application, a practical <Link className="underline" to="/playbook">Frontline Playbook</Link>, and ongoing support. Together, they give fundraising teams the tools, training, and guidance to put clinical insight into action.</Lede>
+            <Lede>PRYSM combines the application, a practical <Link className="underline" to={PAGES.playbook.to}>Frontline Playbook</Link>, and ongoing support. Together, they give fundraising teams the tools, training, and guidance to put clinical insight into action.</Lede>
           </Split>
         </Wrap>
       </Section>

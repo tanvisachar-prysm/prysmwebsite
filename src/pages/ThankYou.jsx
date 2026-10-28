@@ -1,5 +1,6 @@
 import { ButtonLink, Buttons, Eyebrow, Lede, Section, Stack, Wrap } from '../components/ui'
 import { useSEO } from '../utils/useSEO'
+import { PAGES } from '../utils/navigation'
 
 export const ThankYou = () => {
   useSEO(
@@ -17,7 +18,7 @@ export const ThankYou = () => {
           <Lede>Thank you for your interest in PRYSM. A member of our team will review your request and follow up to schedule your demo.</Lede>
           <Buttons>
             <ButtonLink to="/">Return to Home</ButtonLink>
-            <ButtonLink to="/prysm" variant="ghost">Explore PRYSM</ButtonLink>
+            <ButtonLink to={PAGES.prysm.to} variant="ghost">Explore PRYSM</ButtonLink>
           </Buttons>
         </Stack>
       </Wrap>

@@ -3,6 +3,7 @@ import { Zoom } from '../components/Lightbox'
 import { ButtonLink, Buttons, HeroGrid, Lede, Prose, Pull, Section, SectionHead, Split, Stack, StoryBlock, Wrap } from '../components/ui'
 import { cx } from '../utils/cx'
 import { useSEO } from '../utils/useSEO'
+import { PAGES } from '../utils/navigation'
 
 // Light infographic tile used beside text in the case-study bands.
 const TILE = 'light-tile min-h-[340px] rounded-[14px] bg-white shadow-[0_24px_60px_rgba(0,0,0,.35)]'
@@ -289,7 +290,7 @@ export const Results = () => {
           </Prose>
           <div className="bg-strands-cta flex flex-wrap items-center justify-between gap-5 min-h-[240px] mt-14 p-10 rounded-xl max-sm:p-7">
             <h2 className="max-w-[28ch] text-[clamp(1.4rem,2.6vw,1.9rem)] text-white">Build a Stronger Philanthropic Pipeline with PRYSM</h2>
-            <Buttons><ButtonLink to="/demo">Request a Demo</ButtonLink></Buttons>
+            <Buttons><ButtonLink to={PAGES.demo.to}>Request a Demo</ButtonLink></Buttons>
           </div>
         </Wrap>
       </Section>

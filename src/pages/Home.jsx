@@ -4,6 +4,7 @@ import { ButtonLink, Buttons, Eyebrow, HeroGrid, Lede, Section, SectionHead, Spl
 import { shotClass } from '../utils/styles'
 import { cx } from '../utils/cx'
 import { useSEO } from '../utils/useSEO'
+import { PAGES } from '../utils/navigation'
 
 const PRI_IMG_FIXED = 'w-auto max-h-[340px] max-xl:max-h-[320px]'
 
@@ -57,8 +58,8 @@ export const Home = () => {
             <h1>Purpose-built for healthcare philanthropy.</h1>
             <Lede>PRYSM connects clinical insight, physician referrals, and fundraising operations to help health systems identify prospective donors and develop stronger philanthropic relationships.</Lede>
             <Buttons>
-              <ButtonLink to="/demo">Request a Demo →</ButtonLink>
-              <ButtonLink to="/prysm" variant="ghost">Explore PRYSM</ButtonLink>
+              <ButtonLink to={PAGES.demo.to}>Request a Demo →</ButtonLink>
+              <ButtonLink to={PAGES.prysm.to} variant="ghost">Explore PRYSM</ButtonLink>
             </Buttons>
             <p className="flex items-center gap-2.5 mt-1.5 text-[.88rem] text-fg-3">
               <i className="inline-block flex-none size-1.5 rounded-full bg-accent"></i>
@@ -132,7 +133,7 @@ export const Home = () => {
             </Stack>
             <Stack>
               <Lede>PRYSM helps foundations identify opportunities, engage physicians, and manage fundraising activity alongside their existing systems.</Lede>
-              <TextLink to="/prysm">Learn more →</TextLink>
+              <TextLink to={PAGES.prysm.to}>Learn more →</TextLink>
             </Stack>
           </Split>
           <Zoom
