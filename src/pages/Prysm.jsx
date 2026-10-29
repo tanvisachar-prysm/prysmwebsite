@@ -29,16 +29,16 @@ export const Prysm = () => {
 
       <Section className="pt-0">
         <Wrap>
-          {/* <Prose width="wide">
+          <Prose width="wide">
             <p>For frontline teams, PRYSM turns that intelligence into day-to-day fundraising activity. Gift officers can identify and prioritize prospective donors, review the clinical and philanthropic context of each relationship, and determine where to focus outreach. Physician referrals, prospect queues, portfolio management, communications, activity tracking, and automation support work from identification through qualification and cultivation.</p>
             <p>PRYSM also makes the program measurable. Leadership can compare engagement strategies, monitor referrals and qualification activity, and assess results across physicians, departments, and portfolios. Teams can see which approaches are working and adjust their efforts accordingly.</p>
             <p>Built natively on Salesforce, PRYSM works alongside existing healthcare systems rather than replacing them. The electronic medical record remains the system of record for clinical care, and the donor management system remains the system of record for gifts. PRYSM connects these environments and supports specialized tools for screening, communications, and analytics as program needs evolve.</p>
-          </Prose> */}
+          </Prose>
         </Wrap>
       </Section>
 
       <Section className="pt-[clamp(56px,7vw,88px)]">
-        {/* <Wrap>
+        <Wrap>
           <SectionHead center title="One connected environment for healthcare philanthropy." lede="PRYSM connects clinical intelligence, prospect development, and clinician engagement with existing donor management systems and a flexible ecosystem of specialized technologies." />
           <Zoom
             className="mx-auto mt-2 max-w-[760px]"
@@ -46,7 +46,7 @@ export const Prysm = () => {
             src="/img/wheel5.png"
             alt="PRYSM at the center, built on Salesforce, with six functions: identify prospects, engage clinicians, develop pipeline, automate workflows, measure performance, and integrate data sources. Clinical systems and external data are combined, enriched, and automated in PRYSM; qualified prospects and data pass to the donor management system. Fundraising teams and leadership use PRYSM."
           />
-        </Wrap> */}
+        </Wrap>
       </Section>
 
       <Section className="pt-0 pb-16">
@@ -58,7 +58,7 @@ export const Prysm = () => {
       <SixCapabilities />
 
       <Section>
-        {/* <Wrap>
+        <Wrap>
           <Split top>
             <Stack>
               <Eyebrow>03 / The PRYSM difference</Eyebrow>
@@ -72,7 +72,7 @@ export const Prysm = () => {
               <p>Working alongside existing donor management systems, PRYSM creates a more complete solution for healthcare philanthropy—one designed to develop new opportunities while preserving the systems organizations already rely on to manage donor relationships, gifts, and stewardship.</p>
             </Prose>
           </Split>
-        </Wrap> */}
+        </Wrap>
       </Section>
 
       <Section variant="band">
@@ -91,7 +91,7 @@ export const Prysm = () => {
       <CompareTable />
 
       <Section>
-        {/* <Wrap>
+        <Wrap>
           <Split top className="mb-[clamp(36px,5vw,56px)]">
             <Stack>
               <Eyebrow>04 / Flexibility &amp; scalability</Eyebrow>
@@ -110,7 +110,7 @@ export const Prysm = () => {
             </Stack>
             <Zoom className={shotClass} imgClassName="w-full h-auto" src="/shots/opportunity-leadership.png" alt="PRYSM Philanthropic Opportunity dashboard showing patients with philanthropic potential by department, physician, service line, and facility" />
           </Split>
-        </Wrap> */}
+        </Wrap>
       </Section>
 
       <Section className="bg-strands-band [--fg:#fff] [--fg-2:#ece8f6] **:text-white! [&_a]:text-[#dcd2ff]!">
